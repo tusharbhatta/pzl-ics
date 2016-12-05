@@ -7,7 +7,7 @@
     "Tarjei Ormestøyl <tarjeieo@puzzlepart.com>",
     "Tushar Bhattacharyya <tushar.mailme@gmail.com>"
   ],
-  "description": "A browser friendly .ics/.vcs file generator written entirely in javascript. It's a fork based on https://github.com/Puzzlepart/pzl-ics to make event Organizer and Attendees optional.",
+  "description": "A browser friendly .ics/.vcs file generator written entirely in javascript. It's a fork based on https://github.com/Puzzlepart/pzl-ics ",
   "keywords": [
     "ics",
     "iCal",
