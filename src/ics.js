@@ -51,7 +51,7 @@ var ics = function() {
                 typeof stop === 'undefined'
             ) {
                 return null;
-            };
+            }
 
             var icsDateString = "";
             if (begin && begin._isAMomentObject && begin.isValid()) {
@@ -76,12 +76,19 @@ var ics = function() {
                 'BEGIN:VEVENT',
                 'CLASS:PUBLIC'
             ];
-            var organizerString = "ORGANIZER;CN=" + organizer.Name + " ;RSVP=TRUE:" + organizer.Email;
-            calendarEvent.push(organizerString);
+                        
+            if (organizer && organizer.Name) {
+                var organizerString = "ORGANIZER;CN=" + organizer.Name + " ;";
+                if (organizer.Email) {
+                    organizerString = organizerString + "RSVP=TRUE:" + organizer.Email;
+                }
+                calendarEvent.push(organizerString);    
+            }
+            
 
-            if (attendees.length > 0) {
+            if (attendees && attendees.length) {
                 attendees.forEach(function(attendee) {
-                    if (attendee.Email != organizer.Email && attendee.Email != undefined && attendee.Email != 'null') {
+                    if (attendee.Email != organizer.Email && attendee.Email !== undefined && attendee.Email != 'null') {
                         calendarEvent.push("ATTENDEE;CN=" + attendee.Name + " ;RSVP=TRUE:" + attendee.Email);
                     }
                 }, this);
@@ -97,7 +104,7 @@ var ics = function() {
 
             var calendarEventString = "";
             for (var i = 0; i < calendarEvent.length; i++) {
-                if (calendarEvent[i] != "") calendarEventString += calendarEvent[i] + SEPARATOR;
+                if (calendarEvent[i] !== "") calendarEventString += calendarEvent[i] + SEPARATOR;
             }
             calendarEvents.push(calendarEventString);
             return calendarEvent;
