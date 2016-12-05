@@ -1,12 +1,13 @@
 {
-  "name": "pzl-ics",
-  "main": "pzl-ics",
-  "version": "1.0.1.1",
+  "name": "tb-pzl-ics",
+  "main": "tb-pzl-ics",
+  "version": "1.0.1.2",
   "homepage": "https://github.com/Puzzlepart/pzl-ics",
   "contributors": [
-    "Tarjei Ormestøyl <tarjeieo@puzzlepart.com>"
+    "Tarjei Ormestøyl <tarjeieo@puzzlepart.com>",
+    "Tushar Bhattacharyya <tushar.mailme@gmail.com>"
   ],
-  "description": "A browser friendly .ics/.vcs file generator written entirely in javascript. Based on https://github.com/nwcell/ics.js",
+  "description": "A browser friendly .ics/.vcs file generator written entirely in javascript. It's a fork based on https://github.com/Puzzlepart/pzl-ics to make event Organizer and Attendees optional.",
   "keywords": [
     "ics",
     "iCal",
